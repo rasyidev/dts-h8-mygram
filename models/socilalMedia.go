@@ -8,6 +8,6 @@ type SocialMedia struct {
 	SocialMediaUrl string `json:"social_media_url"`
 	UserID         string `json:"user_id"`
 	User           User
-	Created_at     time.Time `json:"created_at"`
-	Updated_at     time.Time `json:"updated_at"`
+	CreatedAt      time.Time `json:"created_at"`
+	UpdatedAt      time.Time `json:"updated_at"`
 }
