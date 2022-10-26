@@ -13,7 +13,7 @@ type User struct {
 }
 
 type UserCreatedResponseData struct {
-	ID       string `json:"user" gorm:"primaryKey"`
+	ID       string `json:"user"`
 	Age      uint   `json:"age"`
 	Email    string `json:"email"`
 	Username string `json:"username"`
