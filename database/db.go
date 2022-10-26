@@ -6,6 +6,7 @@ import (
 	"os"
 
 	_ "github.com/joho/godotenv/autoload"
+	"github.com/rasyidev/dts-h8-mygram/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
@@ -17,5 +18,7 @@ func NewDB() *gorm.DB {
 	if err != nil {
 		log.Fatal("Error connecting to the database:", err.Error())
 	}
+	db.AutoMigrate(&models.User{}, &models.Photo{}, &models.Comment{}, &models.SocialMedia{})
+
 	return db
 }
