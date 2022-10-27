@@ -4,7 +4,7 @@ import "time"
 
 type Comment struct {
 	ID        string `json:"id" gorm:"primaryKey"`
-	Message   string `json:"message"`
+	Message   string `json:"message" validate:"required"`
 	UserID    string `json:"user_id"`
 	User      User
 	PhotoID   string `json:"photo_id"`
