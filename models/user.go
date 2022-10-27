@@ -4,10 +4,10 @@ import "time"
 
 type User struct {
 	ID        string    `json:"user" gorm:"primaryKey"`
-	Username  string    `json:"username"`
-	Email     string    `json:"email"`
-	Password  string    `json:"password"`
-	Age       uint      `json:"age"`
+	Username  string    `json:"username" gorm:"unique" validate:"required"`
+	Email     string    `json:"email" gorm:"unique" validate:"required,email"`
+	Password  string    `json:"password" validate:"required,min=6"`
+	Age       uint      `json:"age" validate:"required,min=9"`
 	CreatedAt time.Time `json:"created_at"`
 	UpdatedAt time.Time `json:"updated_at"`
 }
